@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<ApplicationManifest>App.manifest</ApplicationManifest>
+		<BaseOutputPath>..\..\bin</BaseOutputPath>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<OutputType>WinExe</OutputType>
+		<RootNamespace>Nameless.Client</RootNamespace>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="AppSettings.json" />
+		<None Remove="Resources\Images\windows_256x256.png" />
+		<None Remove="Resources\Images\windows_64x64.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="AppSettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<SplashScreen Include="Resources\Images\windows_256x256.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Nameless.Impl\Nameless.Impl.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources\Images\windows_64x64.png" />
+	</ItemGroup>
+
+</Project>

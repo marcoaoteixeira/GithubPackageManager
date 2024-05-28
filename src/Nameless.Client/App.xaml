@@ -1,0 +1,20 @@
+﻿<Application x:Class="Nameless.Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:Nameless.Impl.Converters;assembly=Nameless.Impl"
+             xmlns:validations="clr-namespace:Nameless.Impl.Validations;assembly=Nameless.Impl">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemesDictionary Theme="Light" />
+                <ui:ControlsDictionary />
+                <ResourceDictionary Source="pack://application:,,,/Resources/ValidationResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:StringToIntegerConverter x:Key="StringToIntegerConverter" />
+            <converters:ApplicationThemeToIndexConverter x:Key="ApplicationThemeToIndexConverter" />
+            <converters:EnumToStringConverter x:Key="EnumToStringConverter" />
+            <validations:NotEmptyValidationRule x:Key="NotEmptyValidationRule" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
